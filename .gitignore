@@ -17,3 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/arquivos_locais
+/.opencode
+AGENTS.md

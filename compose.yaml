@@ -23,7 +23,6 @@ services:
             - sail
         depends_on:
             - mysql
-            - redis
             - mailpit
     mysql:
         image: 'mysql:8.4'
@@ -49,22 +48,15 @@ services:
                 - ping
                 - '-p${DB_PASSWORD}'
             retries: 3
-            timeout: 5s
-    redis:
-        image: 'redis:alpine'
+            timeout: 5s    
+    phpmyadmin:
+        image: 'phpmyadmin:latest'
         ports:
-            - '${FORWARD_REDIS_PORT:-6379}:6379'
-        volumes:
-            - 'sail-redis:/data'
+            - 8080:80
         networks:
             - sail
-        healthcheck:
-            test:
-                - CMD
-                - redis-cli
-                - ping
-            retries: 3
-            timeout: 5s
+        environment:
+            - PMA_ARBITRARY=1
     mailpit:
         image: 'axllent/mailpit:latest'
         ports:
