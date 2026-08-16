@@ -67,7 +67,7 @@ const remainingLabel = computed(() => {
                         <img
                             src="/storage/users/julia.jpeg"
                             alt="Foto de Júlia Montanari"
-                            class="h-44 w-44 rounded-3xl border-4 border-white/30 object-cover shadow-2xl shadow-rose-950/30 sm:h-52 sm:w-52"
+                            class="h-44 w-44 rounded-3xl border-4 border-white/30 object-cover object-top shadow-2xl shadow-rose-950/30 sm:h-52 sm:w-52"
                         />
                     </div>
 
@@ -118,19 +118,6 @@ const remainingLabel = computed(() => {
                                 Contato
                             </h2>
                             <ul class="space-y-4 text-sm">
-                                <li class="flex gap-3">
-                                    <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-rose-800">
-                                        <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                        </svg>
-                                    </span>
-                                    <div>
-                                        <p class="font-semibold text-rose-900">Telefone</p>
-                                        <a href="tel:+5512982194641" class="text-rose-800 hover:underline">
-                                            (12) 98219-4641
-                                        </a>
-                                    </div>
-                                </li>
                                 <li class="flex gap-3">
                                     <span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-rose-800">
                                         <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -371,7 +358,22 @@ const remainingLabel = computed(() => {
         </main>
 
         <footer class="border-t border-rose-100 bg-white px-6 py-8 text-center">
-            <p class="text-sm text-rose-900/70">Júlia Montanari — Estudante de Direito</p>
+            <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 sm:flex-row sm:items-center">
+                <p class="text-sm text-rose-900/70">Júlia Montanari — Estudante de Direito</p>
+                <p class="text-sm text-rose-900/60">
+                    Feito com
+                    <span aria-hidden="true">🖤</span>
+                    por
+                    <a
+                        href="https://informaticalivre.com.br"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-semibold text-rose-800 underline-offset-4 transition hover:text-rose-950 hover:underline"
+                    >
+                        Informática Livre
+                    </a>
+                </p>
+            </div>
         </footer>
     </div>
 
