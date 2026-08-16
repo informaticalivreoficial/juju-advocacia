@@ -69,5 +69,14 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-MJRCS9528F"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-MJRCS9528F');
+        </script>
     </body>
 </html>
