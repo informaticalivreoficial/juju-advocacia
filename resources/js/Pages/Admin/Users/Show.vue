@@ -55,7 +55,7 @@ const details = computed(() => [
                 <Link
                     v-if="can('users.update')"
                     :href="route('admin.users.edit', user.id)"
-                    class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+                    class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-500"
                 >
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
@@ -66,13 +66,13 @@ const details = computed(() => [
 
             <Card>
                 <div class="flex items-center gap-4">
-                    <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-lg font-bold text-indigo-700">
+                    <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-brand-100 text-lg font-bold text-brand-700">
                         {{ initials }}
                     </span>
                     <div>
                         <p class="text-lg font-semibold text-slate-900">{{ user.name }}</p>
                         <div class="mt-1 flex flex-wrap gap-2">
-                            <Badge color="indigo">{{ user.roleDefinition?.label ?? user.role }}</Badge>
+                            <Badge color="brand">{{ user.roleDefinition?.label ?? user.role }}</Badge>
                             <Badge :color="user.is_active ? 'green' : 'red'">
                                 {{ user.is_active ? 'Ativo' : 'Inativo' }}
                             </Badge>

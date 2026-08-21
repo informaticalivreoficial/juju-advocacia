@@ -35,7 +35,12 @@ const submit = () => {
     <GuestLayout>
         <Head title="Redefinir Senha" />
 
-        <form @submit.prevent="submit">
+        <div class="mb-6 text-center">
+            <h1 class="text-xl font-bold tracking-tight text-brand-950">Redefinir senha</h1>
+            <p class="mt-1 text-sm text-brand-900/60">Escolha uma nova senha para sua conta.</p>
+        </div>
+
+        <form @submit.prevent="submit" class="space-y-5">
             <div>
                 <InputLabel for="email" value="E-mail" />
 

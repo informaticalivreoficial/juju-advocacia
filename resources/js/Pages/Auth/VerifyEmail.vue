@@ -23,28 +23,32 @@ const verificationLinkSent = computed(() => props.status === 'verification-link-
     <GuestLayout>
         <Head title="Verificação de E-mail" />
 
-        <div class="mb-4 text-sm text-gray-600">
-            Obrigado por se registrar! Antes de começar, você poderia verificar seu endereço de e-mail clicando no link
-            que acabamos de enviar? Se não recebeu o e-mail, teremos prazer em enviar outro.
+        <div class="mb-6 text-center">
+            <h1 class="text-xl font-bold tracking-tight text-brand-950">Verifique seu e-mail</h1>
+            <p class="mt-1 text-sm text-brand-900/60">
+                Antes de começar, clique no link que enviamos para seu endereço de e-mail. Não recebeu? Enviamos
+                outro abaixo.
+            </p>
         </div>
 
         <div class="mb-4 font-medium text-sm text-green-600" v-if="verificationLinkSent">
             Um novo link de verificação foi enviado para o endereço de e-mail informado durante o registro.
         </div>
 
-        <form @submit.prevent="submit">
-            <div class="mt-4 flex items-center justify-between">
+        <form @submit.prevent="submit" class="space-y-5">
+            <div class="flex items-center justify-between gap-3">
                 <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Reenviar E-mail de Verificação
+                    Reenviar verificação
                 </PrimaryButton>
 
                 <Link
                     :href="route('logout')"
                     method="post"
                     as="button"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                    >Sair</Link
+                    class="text-sm font-medium text-brand-700 hover:text-brand-900 hover:underline"
                 >
+                    Sair
+                </Link>
             </div>
         </form>
     </GuestLayout>

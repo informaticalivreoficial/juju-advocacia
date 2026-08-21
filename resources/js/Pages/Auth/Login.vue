@@ -33,11 +33,16 @@ const submit = () => {
     <GuestLayout>
         <Head title="Entrar" />
 
+        <div class="mb-6 text-center">
+            <h1 class="text-xl font-bold tracking-tight text-brand-950">Bem-vindo(a) de volta</h1>
+            <p class="mt-1 text-sm text-brand-900/60">Acesse o painel administrativo do escritório.</p>
+        </div>
+
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit">
+        <form @submit.prevent="submit" class="space-y-5">
             <div>
                 <InputLabel for="email" value="E-mail" />
 
@@ -54,7 +59,7 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
-            <div class="mt-4">
+            <div>
                 <InputLabel for="password" value="Senha" />
 
                 <TextInput
@@ -69,26 +74,28 @@ const submit = () => {
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
-            <div class="block mt-4">
+            <div class="flex items-center justify-between gap-4">
                 <label class="flex items-center">
                     <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ms-2 text-sm text-gray-600">Lembrar-me</span>
+                    <span class="ms-2 text-sm text-brand-900/70">Lembrar-me</span>
                 </label>
-            </div>
 
-            <div class="flex items-center justify-end mt-4">
                 <Link
                     v-if="canResetPassword"
                     :href="route('password.request')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="text-sm font-medium text-brand-700 hover:text-brand-900 hover:underline"
                 >
                     Esqueceu sua senha?
                 </Link>
-
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Entrar
-                </PrimaryButton>
             </div>
+
+            <PrimaryButton
+                class="w-full"
+                :class="{ 'opacity-50': form.processing }"
+                :disabled="form.processing"
+            >
+                {{ form.processing ? 'Entrando...' : 'Entrar' }}
+            </PrimaryButton>
         </form>
     </GuestLayout>
 </template>

@@ -36,7 +36,7 @@ const deleteProcess = () => {
 const statusColor = (status) => ({
     analysis: 'amber',
     active: 'green',
-    awaiting_decision: 'indigo',
+    awaiting_decision: 'brand',
     suspended: 'gray',
     archived: 'slate',
     closed: 'gray',
@@ -89,7 +89,7 @@ const parties = computed(() => [
                 <Link
                     v-if="can('processes.update')"
                     :href="route('admin.processes.edit', process.id)"
-                    class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+                    class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-500"
                 >
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
@@ -148,7 +148,7 @@ const parties = computed(() => [
                 <div v-if="timeline.length > 0">
                     <ol class="relative space-y-6 border-l border-slate-200 pl-6">
                         <li v-for="(item, index) in timeline" :key="index">
-                            <span class="absolute -left-[9px] mt-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-100 ring-4 ring-white"></span>
+                            <span class="absolute -left-[9px] mt-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-brand-100 ring-4 ring-white"></span>
                             <p class="text-sm font-semibold text-slate-900">{{ item.title }}</p>
                             <p class="mt-0.5 text-xs text-slate-500">{{ item.date }}</p>
                         </li>

@@ -38,7 +38,7 @@ const emit = defineEmits(['confirm', 'close']);
             <div class="flex items-start gap-4">
                 <div
                     class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
-                    :class="variant === 'danger' ? 'bg-red-50 text-red-600' : 'bg-indigo-50 text-indigo-600'"
+                    :class="variant === 'danger' ? 'bg-red-50 text-red-600' : 'bg-brand-50 text-brand-600'"
                 >
                     <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path
@@ -63,7 +63,7 @@ const emit = defineEmits(['confirm', 'close']);
                     :class="
                         variant === 'danger'
                             ? 'bg-red-600 hover:bg-red-500 active:bg-red-700 focus:ring-red-500'
-                            : 'bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 focus:ring-indigo-500'
+                            : 'bg-brand-600 hover:bg-brand-500 active:bg-brand-700 focus:ring-brand-500'
                     "
                     class="inline-flex items-center rounded-md border border-transparent px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white focus:outline-none focus:ring-2 focus:ring-offset-2 transition ease-in-out duration-150"
                 >

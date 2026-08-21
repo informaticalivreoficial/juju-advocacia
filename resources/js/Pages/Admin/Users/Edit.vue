@@ -48,7 +48,7 @@ const submit = () => {
                             <TextInput
                                 id="name"
                                 type="text"
-                                class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                                class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                                 v-model="form.name"
                                 required
                             />
@@ -60,7 +60,7 @@ const submit = () => {
                             <TextInput
                                 id="email"
                                 type="email"
-                                class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                                class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                                 v-model="form.email"
                                 required
                             />
@@ -72,7 +72,7 @@ const submit = () => {
                             <TextInput
                                 id="phone"
                                 type="text"
-                                class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                                class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                                 v-model="form.phone"
                                 placeholder="(12) 99999-9999"
                             />
@@ -90,7 +90,7 @@ const submit = () => {
                                 <input
                                     v-model="form.is_active"
                                     type="checkbox"
-                                    class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                                    class="rounded border-slate-300 text-brand-600 focus:ring-brand-500"
                                 />
                                 <span class="text-sm font-medium text-slate-700">Ativo</span>
                             </label>
@@ -101,7 +101,7 @@ const submit = () => {
                             <TextInput
                                 id="password"
                                 type="password"
-                                class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                                class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                                 v-model="form.password"
                                 placeholder="Deixe em branco para manter"
                                 autocomplete="new-password"
@@ -114,7 +114,7 @@ const submit = () => {
                             <TextInput
                                 id="password_confirmation"
                                 type="password"
-                                class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                                class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                                 v-model="form.password_confirmation"
                                 placeholder="Deixe em branco para manter"
                                 autocomplete="new-password"
@@ -126,7 +126,7 @@ const submit = () => {
                     <div class="flex items-center justify-end gap-3 border-t border-slate-100 pt-5">
                         <Link
                             :href="route('admin.users.index')"
-                            class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25"
+                            class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:opacity-25"
                         >
                             Cancelar
                         </Link>

@@ -18,7 +18,7 @@ defineProps({
 
 <template>
     <select
-        class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+        class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm"
         v-model="model"
     >
         <option v-if="placeholder" value="">{{ placeholder }}</option>

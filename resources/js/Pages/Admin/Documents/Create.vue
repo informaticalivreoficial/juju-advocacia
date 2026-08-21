@@ -92,7 +92,7 @@ const submit = () => {
                                 id="file"
                                 type="file"
                                 accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip"
-                                class="mt-1 block w-full text-sm text-slate-600 file:mr-4 file:rounded-md file:border-0 file:bg-indigo-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-indigo-700 hover:file:bg-indigo-100"
+                                class="mt-1 block w-full text-sm text-slate-600 file:mr-4 file:rounded-md file:border-0 file:bg-brand-50 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-brand-700 hover:file:bg-brand-100"
                                 @change="onFileChange"
                             />
                             <p v-if="form.file" class="mt-2 text-sm text-slate-600">
@@ -108,7 +108,7 @@ const submit = () => {
                                 id="description"
                                 v-model="form.description"
                                 rows="3"
-                                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm"
                                 placeholder="Descrição opcional do documento..."
                             ></textarea>
                             <InputError class="mt-2" :message="form.errors.description" />
@@ -118,7 +118,7 @@ const submit = () => {
                     <div class="mt-6 flex items-center justify-end gap-3 border-t border-slate-100 pt-5">
                         <Link
                             :href="route('admin.documents.index')"
-                            class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25"
+                            class="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest text-gray-700 shadow-sm transition hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:opacity-25"
                         >
                             Cancelar
                         </Link>

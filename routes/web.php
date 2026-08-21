@@ -2,8 +2,17 @@
 
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DeadlineController;
 use App\Http\Controllers\Admin\DocumentController;
+use App\Http\Controllers\Admin\Financial\FinancialAnnualController;
+use App\Http\Controllers\Admin\Financial\FinancialBudgetController;
+use App\Http\Controllers\Admin\Financial\FinancialCategoryController;
+use App\Http\Controllers\Admin\Financial\FinancialDashboardController;
+use App\Http\Controllers\Admin\Financial\FinancialExpenseController;
+use App\Http\Controllers\Admin\Financial\FinancialIncomeController;
+use App\Http\Controllers\Admin\Financial\FinancialReportController;
+use App\Http\Controllers\Admin\Financial\FinancialTransactionController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\ProcessController;
 use App\Http\Controllers\Admin\TaskController;
@@ -31,7 +40,7 @@ Route::get('/', function () {
 Route::post('/contato', [ContactController::class, 'store'])->name('contact.store');
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return redirect()->route('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -50,9 +59,7 @@ Route::middleware(['auth'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
-        Route::get('/', function () {
-            return redirect()->route('admin.users.index');
-        })->name('dashboard');
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::get('permissions', [PermissionController::class, 'index'])->name('permissions.index');
 
@@ -109,6 +116,51 @@ Route::middleware(['auth'])
         Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
         Route::patch('users/{user}/active', [UserController::class, 'toggleActive'])->name('users.toggle-active');
         Route::delete('users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+        Route::prefix('financeiro')
+            ->name('financial.')
+            ->group(function () {
+                Route::get('/', [FinancialDashboardController::class, 'index'])->name('dashboard');
+                Route::get('anual', [FinancialAnnualController::class, 'index'])->name('annual.index');
+                Route::get('relatorios', [FinancialReportController::class, 'index'])->name('reports.index');
+                Route::get('relatorios/exportar', [FinancialReportController::class, 'export'])->name('reports.export');
+
+                Route::get('lancamentos', [FinancialTransactionController::class, 'index'])->name('transactions.index');
+                Route::post('lancamentos/gerar', [FinancialTransactionController::class, 'generate'])->name('transactions.generate');
+                Route::post('lancamentos/marcar-despesas-pagas', [FinancialTransactionController::class, 'markAllExpensesPaid'])->name('transactions.mark-all-expenses-paid');
+                Route::post('lancamentos/marcar-receitas-recebidas', [FinancialTransactionController::class, 'markAllIncomesReceived'])->name('transactions.mark-all-incomes-received');
+                Route::post('lancamentos', [FinancialTransactionController::class, 'store'])->name('transactions.store');
+                Route::get('lancamentos/exportar', [FinancialTransactionController::class, 'export'])->name('transactions.export');
+                Route::get('lancamentos/{transaction}/anexo', [FinancialTransactionController::class, 'downloadAttachment'])->name('transactions.download-attachment');
+                Route::put('lancamentos/{transaction}', [FinancialTransactionController::class, 'update'])->name('transactions.update');
+                Route::patch('lancamentos/{transaction}/status', [FinancialTransactionController::class, 'status'])->name('transactions.status');
+                Route::delete('lancamentos/{transaction}', [FinancialTransactionController::class, 'destroy'])->name('transactions.destroy');
+
+                Route::get('despesas', [FinancialExpenseController::class, 'index'])->name('expenses.index');
+                Route::get('despesas/create', [FinancialExpenseController::class, 'create'])->name('expenses.create');
+                Route::post('despesas', [FinancialExpenseController::class, 'store'])->name('expenses.store');
+                Route::get('despesas/{expense}/edit', [FinancialExpenseController::class, 'edit'])->name('expenses.edit');
+                Route::put('despesas/{expense}', [FinancialExpenseController::class, 'update'])->name('expenses.update');
+                Route::patch('despesas/{expense}/active', [FinancialExpenseController::class, 'toggleActive'])->name('expenses.toggle-active');
+                Route::delete('despesas/{expense}', [FinancialExpenseController::class, 'destroy'])->name('expenses.destroy');
+
+                Route::get('receitas', [FinancialIncomeController::class, 'index'])->name('incomes.index');
+                Route::get('receitas/create', [FinancialIncomeController::class, 'create'])->name('incomes.create');
+                Route::post('receitas', [FinancialIncomeController::class, 'store'])->name('incomes.store');
+                Route::get('receitas/{income}/edit', [FinancialIncomeController::class, 'edit'])->name('incomes.edit');
+                Route::put('receitas/{income}', [FinancialIncomeController::class, 'update'])->name('incomes.update');
+                Route::patch('receitas/{income}/active', [FinancialIncomeController::class, 'toggleActive'])->name('incomes.toggle-active');
+                Route::delete('receitas/{income}', [FinancialIncomeController::class, 'destroy'])->name('incomes.destroy');
+
+                Route::get('categorias', [FinancialCategoryController::class, 'index'])->name('categories.index');
+                Route::post('categorias', [FinancialCategoryController::class, 'store'])->name('categories.store');
+                Route::put('categorias/{category}', [FinancialCategoryController::class, 'update'])->name('categories.update');
+                Route::patch('categorias/{category}/active', [FinancialCategoryController::class, 'toggleActive'])->name('categories.toggle-active');
+                Route::delete('categorias/{category}', [FinancialCategoryController::class, 'destroy'])->name('categories.destroy');
+
+                Route::post('orcamentos', [FinancialBudgetController::class, 'store'])->name('budgets.store');
+                Route::delete('orcamentos/{budget}', [FinancialBudgetController::class, 'destroy'])->name('budgets.destroy');
+            });
     });
 
 require __DIR__.'/auth.php';

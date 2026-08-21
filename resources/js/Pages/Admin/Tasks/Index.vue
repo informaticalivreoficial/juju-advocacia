@@ -63,7 +63,7 @@ const applyFilters = (extra = {}) => {
 const statusLabels = Object.fromEntries(props.statuses.map((item) => [item.value, item.label]));
 const statusColor = (status) => ({
     pending: 'amber',
-    in_progress: 'indigo',
+    in_progress: 'brand',
     completed: 'green',
 }[status] ?? 'gray');
 
@@ -111,7 +111,7 @@ const toggleComplete = (task) => {
                 <Link
                     v-if="can('tasks.create')"
                     :href="route('admin.tasks.create')"
-                    class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+                    class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-500"
                 >
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -155,7 +155,7 @@ const toggleComplete = (task) => {
                             v-model="search"
                             type="search"
                             placeholder="Buscar por tarefa, processo ou cliente..."
-                            class="mt-0 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                            class="mt-0 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         />
                     </div>
                     <div>
@@ -180,7 +180,7 @@ const toggleComplete = (task) => {
                                 <td class="px-4 py-3">
                                     <p class="text-sm font-medium text-slate-900">{{ task.title }}</p>
                                     <p v-if="task.process" class="mt-0.5 text-xs text-slate-500">
-                                        <Link :href="route('admin.processes.show', task.process.id)" class="hover:text-indigo-600 hover:underline">
+                                        <Link :href="route('admin.processes.show', task.process.id)" class="hover:text-brand-600 hover:underline">
                                             {{ task.process.title }}
                                         </Link>
                                     </p>

@@ -21,11 +21,12 @@ const submit = () => {
     <GuestLayout>
         <Head title="Confirmar Senha" />
 
-        <div class="mb-4 text-sm text-gray-600">
-            Esta é uma área segura do aplicativo. Confirme sua senha antes de continuar.
+        <div class="mb-6 text-center">
+            <h1 class="text-xl font-bold tracking-tight text-brand-950">Confirme sua senha</h1>
+            <p class="mt-1 text-sm text-brand-900/60">Esta é uma área segura do aplicativo.</p>
         </div>
 
-        <form @submit.prevent="submit">
+        <form @submit.prevent="submit" class="space-y-5">
             <div>
                 <InputLabel for="password" value="Senha" />
                 <TextInput
@@ -41,7 +42,7 @@ const submit = () => {
             </div>
 
             <div class="flex justify-end mt-4">
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <PrimaryButton class="w-full" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Confirmar
                 </PrimaryButton>
             </div>

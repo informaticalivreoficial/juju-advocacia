@@ -67,7 +67,7 @@ defineProps({
             <input
                 v-model="form.all_day"
                 type="checkbox"
-                class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                class="rounded border-slate-300 text-brand-600 focus:ring-brand-500"
             />
             <span class="text-sm font-medium text-slate-700">Dia todo</span>
         </label>
@@ -98,7 +98,7 @@ defineProps({
                 id="description"
                 v-model="form.description"
                 rows="3"
-                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm"
                 placeholder="Detalhes do evento..."
             ></textarea>
             <InputError class="mt-2" :message="form.errors.description" />

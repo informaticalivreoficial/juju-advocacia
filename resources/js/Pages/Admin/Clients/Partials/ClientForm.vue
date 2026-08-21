@@ -27,7 +27,7 @@ defineProps({
                 <TextInput
                     id="company_name"
                     type="text"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     v-model="form.company_name"
                     :required="form.type === 'company'"
                 />
@@ -39,7 +39,7 @@ defineProps({
                 <TextInput
                     id="name"
                     type="text"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     v-model="form.name"
                     :required="form.type === 'individual'"
                     autofocus
@@ -52,7 +52,7 @@ defineProps({
                 <TextInput
                     id="trade_name"
                     type="text"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     v-model="form.trade_name"
                 />
                 <InputError class="mt-2" :message="form.errors.trade_name" />
@@ -66,7 +66,7 @@ defineProps({
                     id="document"
                     type="text"
                     inputmode="numeric"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     :value="formatDocument(form.document)"
                     @input="form.document = onlyDigits($event.target.value)"
                     :placeholder="form.type === 'company' ? '00.000.000/0000-00' : '000.000.000-00'"
@@ -80,7 +80,7 @@ defineProps({
                 <TextInput
                     id="email"
                     type="email"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     v-model="form.email"
                 />
                 <InputError class="mt-2" :message="form.errors.email" />
@@ -92,7 +92,7 @@ defineProps({
                     id="phone"
                     type="text"
                     inputmode="numeric"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     :value="formatPhone(form.phone)"
                     @input="form.phone = onlyDigits($event.target.value)"
                     placeholder="(00) 0000-0000"
@@ -106,7 +106,7 @@ defineProps({
                     id="mobile"
                     type="text"
                     inputmode="numeric"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     :value="formatPhone(form.mobile)"
                     @input="form.mobile = onlyDigits($event.target.value)"
                     placeholder="(00) 00000-0000"
@@ -120,7 +120,7 @@ defineProps({
                     <TextInput
                         id="birth_date"
                         type="date"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.birth_date"
                     />
                     <InputError class="mt-2" :message="form.errors.birth_date" />
@@ -142,7 +142,7 @@ defineProps({
                     <TextInput
                         id="profession"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.profession"
                     />
                     <InputError class="mt-2" :message="form.errors.profession" />
@@ -155,7 +155,7 @@ defineProps({
                     <TextInput
                         id="state_registration"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.state_registration"
                     />
                     <InputError class="mt-2" :message="form.errors.state_registration" />
@@ -172,7 +172,7 @@ defineProps({
                         id="zip_code"
                         type="text"
                         inputmode="numeric"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         :value="formatZipCode(form.zip_code)"
                         @input="form.zip_code = onlyDigits($event.target.value)"
                         placeholder="00000-000"
@@ -191,7 +191,7 @@ defineProps({
                     <TextInput
                         id="address"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.address"
                     />
                     <InputError class="mt-2" :message="form.errors.address" />
@@ -202,7 +202,7 @@ defineProps({
                     <TextInput
                         id="number"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.number"
                     />
                     <InputError class="mt-2" :message="form.errors.number" />
@@ -213,7 +213,7 @@ defineProps({
                     <TextInput
                         id="complement"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.complement"
                     />
                     <InputError class="mt-2" :message="form.errors.complement" />
@@ -224,7 +224,7 @@ defineProps({
                     <TextInput
                         id="neighborhood"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.neighborhood"
                     />
                     <InputError class="mt-2" :message="form.errors.neighborhood" />
@@ -235,7 +235,7 @@ defineProps({
                     <TextInput
                         id="city"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.city"
                     />
                     <InputError class="mt-2" :message="form.errors.city" />
@@ -249,7 +249,7 @@ defineProps({
                 id="notes"
                 v-model="form.notes"
                 rows="3"
-                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm"
             ></textarea>
             <InputError class="mt-2" :message="form.errors.notes" />
         </div>
@@ -258,7 +258,7 @@ defineProps({
             <input
                 v-model="form.is_active"
                 type="checkbox"
-                class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                class="rounded border-slate-300 text-brand-600 focus:ring-brand-500"
             />
             <span class="text-sm font-medium text-slate-700">Cliente ativo</span>
         </label>

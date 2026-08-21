@@ -25,16 +25,18 @@ const submit = () => {
     <GuestLayout>
         <Head title="Esqueceu a senha" />
 
-        <div class="mb-4 text-sm text-gray-600">
-            Esqueceu sua senha? Sem problema. Basta nos informar seu endereço de e-mail e enviaremos um link de
-            redefinição de senha que permitirá escolher uma nova.
+        <div class="mb-6 text-center">
+            <h1 class="text-xl font-bold tracking-tight text-brand-950">Recuperar senha</h1>
+            <p class="mt-1 text-sm text-brand-900/60">
+                Informe seu e-mail e enviaremos um link para redefinir sua senha.
+            </p>
         </div>
 
         <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
             {{ status }}
         </div>
 
-        <form @submit.prevent="submit">
+        <form @submit.prevent="submit" class="space-y-5">
             <div>
                 <InputLabel for="email" value="E-mail" />
 
@@ -53,7 +55,7 @@ const submit = () => {
 
             <div class="flex items-center justify-end mt-4">
                 <PrimaryButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Enviar Link de Redefinição de Senha
+                    Enviar link de redefinição
                 </PrimaryButton>
             </div>
         </form>

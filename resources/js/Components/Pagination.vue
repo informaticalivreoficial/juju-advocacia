@@ -36,7 +36,7 @@ defineProps({
                     :href="link.url"
                     preserve-scroll
                     class="inline-flex min-w-9 items-center justify-center rounded-md border border-slate-300 px-2.5 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50"
-                    :class="{ 'border-indigo-500 bg-indigo-50 text-indigo-700': link.active }"
+                    :class="{ 'border-brand-500 bg-brand-50 text-brand-700': link.active }"
                     v-html="link.label"
                 />
                 <span

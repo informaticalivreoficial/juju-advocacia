@@ -86,7 +86,7 @@ const initials = (name) =>
                 <Link
                     v-if="can('clients.create')"
                     :href="route('admin.clients.create')"
-                    class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+                    class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-500"
                 >
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -102,7 +102,7 @@ const initials = (name) =>
                             v-model="search"
                             type="search"
                             placeholder="Buscar por nome, documento ou e-mail..."
-                            class="mt-0 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                            class="mt-0 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         />
                     </div>
                     <div>
@@ -136,11 +136,11 @@ const initials = (name) =>
                             <tr v-for="client in clients.data" :key="client.id" class="hover:bg-slate-50">
                                 <td class="px-4 py-3">
                                     <div class="flex items-center gap-3">
-                                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700">
+                                        <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-700">
                                             {{ initials(displayName(client)) }}
                                         </span>
                                         <div class="min-w-0">
-                                            <Link :href="route('admin.clients.show', client.id)" class="block truncate text-sm font-medium text-slate-900 hover:text-indigo-600 hover:underline">
+                                            <Link :href="route('admin.clients.show', client.id)" class="block truncate text-sm font-medium text-slate-900 hover:text-brand-600 hover:underline">
                                                 {{ displayName(client) }}
                                             </Link>
                                             <p v-if="client.type === 'company' && client.trade_name" class="truncate text-xs text-slate-500">
@@ -154,7 +154,7 @@ const initials = (name) =>
                                 </td>
                                 <td class="hidden px-4 py-3 text-sm text-slate-600 lg:table-cell">{{ client.email ?? '—' }}</td>
                                 <td class="hidden px-4 py-3 md:table-cell">
-                                    <Badge :color="client.type === 'company' ? 'slate' : 'indigo'">
+                                    <Badge :color="client.type === 'company' ? 'slate' : 'brand'">
                                         {{ client.type === 'company' ? 'PJ' : 'PF' }}
                                     </Badge>
                                 </td>

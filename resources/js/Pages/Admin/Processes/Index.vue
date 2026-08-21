@@ -28,7 +28,7 @@ const areaLabels = Object.fromEntries(props.areas.map((item) => [item.value, ite
 const statusColor = (status) => ({
     analysis: 'amber',
     active: 'green',
-    awaiting_decision: 'indigo',
+    awaiting_decision: 'brand',
     suspended: 'gray',
     archived: 'slate',
     closed: 'gray',
@@ -107,7 +107,7 @@ const clientName = (process) =>
                 <Link
                     v-if="can('processes.create')"
                     :href="route('admin.processes.create')"
-                    class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+                    class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-500"
                 >
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -123,7 +123,7 @@ const clientName = (process) =>
                             v-model="search"
                             type="search"
                             placeholder="Buscar por número, título, partes ou cliente..."
-                            class="mt-0 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                            class="mt-0 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         />
                     </div>
                     <div>
@@ -156,7 +156,7 @@ const clientName = (process) =>
                         <tbody class="divide-y divide-slate-100 bg-white">
                             <tr v-for="process in processes.data" :key="process.id" class="hover:bg-slate-50">
                                 <td class="px-4 py-3">
-                                    <Link :href="route('admin.processes.show', process.id)" class="block text-sm font-medium text-slate-900 hover:text-indigo-600 hover:underline">
+                                    <Link :href="route('admin.processes.show', process.id)" class="block text-sm font-medium text-slate-900 hover:text-brand-600 hover:underline">
                                         {{ process.title }}
                                     </Link>
                                     <p class="mt-0.5 text-xs text-slate-500">{{ process.process_number ?? 'Sem número' }}</p>

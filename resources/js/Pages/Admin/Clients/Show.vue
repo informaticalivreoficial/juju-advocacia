@@ -90,7 +90,7 @@ const addressDetails = computed(() => {
                 <Link
                     v-if="can('clients.update')"
                     :href="route('admin.clients.edit', client.id)"
-                    class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+                    class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-500"
                 >
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125" />
@@ -101,7 +101,7 @@ const addressDetails = computed(() => {
 
             <Card>
                 <div class="flex flex-wrap items-center gap-2">
-                    <Badge color="indigo">{{ client.type === 'company' ? 'Pessoa Jurídica' : 'Pessoa Física' }}</Badge>
+                    <Badge color="brand">{{ client.type === 'company' ? 'Pessoa Jurídica' : 'Pessoa Física' }}</Badge>
                     <Badge :color="client.is_active ? 'green' : 'red'">
                         {{ client.is_active ? 'Ativo' : 'Inativo' }}
                     </Badge>

@@ -23,7 +23,7 @@ const moduleLabels = {
 
 const roleColor = (role) => ({
     admin: 'red',
-    partner: 'indigo',
+    partner: 'brand',
     lawyer: 'slate',
     assistant: 'amber',
     secretary: 'gray',

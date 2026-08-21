@@ -23,16 +23,22 @@ const form = useForm({
 </script>
 
 <template>
-    <section>
-        <header>
-            <h2 class="text-lg font-medium text-gray-900">Informações do Perfil</h2>
+    <section class="rounded-2xl border border-brand-100 bg-white p-6 shadow-sm sm:p-8">
+        <div class="flex items-start gap-4">
+            <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+            </span>
+            <div>
+                <h2 class="text-lg font-bold text-brand-950">Informações do perfil</h2>
+                <p class="mt-0.5 text-sm text-slate-500">
+                    Atualize as informações do perfil e o endereço de e-mail da sua conta.
+                </p>
+            </div>
+        </div>
 
-            <p class="mt-1 text-sm text-gray-600">
-                Atualize as informações do perfil e o endereço de e-mail da sua conta.
-            </p>
-        </header>
-
-        <form @submit.prevent="form.patch(route('profile.update'))" class="mt-6 space-y-6">
+        <form @submit.prevent="form.patch(route('profile.update'))" class="mt-7 space-y-5">
             <div>
                 <InputLabel for="name" value="Nome" />
 
@@ -65,22 +71,19 @@ const form = useForm({
             </div>
 
             <div v-if="mustVerifyEmail && user.email_verified_at === null">
-                <p class="text-sm mt-2 text-gray-800">
+                <p class="text-sm text-brand-900/80">
                     Seu endereço de e-mail não está verificado.
                     <Link
                         :href="route('verification.send')"
                         method="post"
                         as="button"
-                        class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        class="font-semibold text-brand-700 hover:text-brand-900 hover:underline"
                     >
                         Clique aqui para reenviar o e-mail de verificação.
                     </Link>
                 </p>
 
-                <div
-                    v-show="status === 'verification-link-sent'"
-                    class="mt-2 font-medium text-sm text-green-600"
-                >
+                <div v-show="status === 'verification-link-sent'" class="mt-2 font-medium text-sm text-green-600">
                     Um novo link de verificação foi enviado para o seu endereço de e-mail.
                 </div>
             </div>
@@ -94,7 +97,7 @@ const form = useForm({
                     leave-active-class="transition ease-in-out"
                     leave-to-class="opacity-0"
                 >
-                    <p v-if="form.recentlySuccessful" class="text-sm text-gray-600">Salvo.</p>
+                    <p v-if="form.recentlySuccessful" class="text-sm font-medium text-emerald-600">Salvo.</p>
                 </Transition>
             </div>
         </form>

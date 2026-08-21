@@ -6,6 +6,11 @@ use App\Models\CalendarEvent;
 use App\Models\Client;
 use App\Models\Deadline;
 use App\Models\Document;
+use App\Models\FinancialBudget;
+use App\Models\FinancialCategory;
+use App\Models\FinancialExpense;
+use App\Models\FinancialIncome;
+use App\Models\FinancialTransaction;
 use App\Models\Process;
 use App\Models\Task;
 use App\Models\User;
@@ -13,6 +18,7 @@ use App\Policies\CalendarEventPolicy;
 use App\Policies\ClientPolicy;
 use App\Policies\DeadlinePolicy;
 use App\Policies\DocumentPolicy;
+use App\Policies\FinancialPolicy;
 use App\Policies\ProcessPolicy;
 use App\Policies\TaskPolicy;
 use App\Policies\UserPolicy;
@@ -34,6 +40,11 @@ class AuthServiceProvider extends ServiceProvider
         Task::class => TaskPolicy::class,
         CalendarEvent::class => CalendarEventPolicy::class,
         Document::class => DocumentPolicy::class,
+        FinancialCategory::class => FinancialPolicy::class,
+        FinancialExpense::class => FinancialPolicy::class,
+        FinancialIncome::class => FinancialPolicy::class,
+        FinancialTransaction::class => FinancialPolicy::class,
+        FinancialBudget::class => FinancialPolicy::class,
     ];
 
     /**

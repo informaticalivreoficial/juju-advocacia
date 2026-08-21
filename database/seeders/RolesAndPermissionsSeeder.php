@@ -15,6 +15,7 @@ class RolesAndPermissionsSeeder extends Seeder
         'tasks' => 'Tarefas',
         'calendar' => 'Agenda',
         'documents' => 'Documentos',
+        'financial' => 'Financeiro',
         'users' => 'Usuários',
         'audit' => 'Auditoria',
     ];
@@ -41,6 +42,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'tasks.view', 'tasks.create', 'tasks.update',
             'calendar.view', 'calendar.create', 'calendar.update',
             'documents.view', 'documents.create',
+            'financial.view', 'financial.create', 'financial.update',
         ],
         'assistant' => [
             'clients.view', 'clients.update',
@@ -49,6 +51,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'tasks.view', 'tasks.create', 'tasks.update',
             'calendar.view', 'calendar.create', 'calendar.update',
             'documents.view', 'documents.create',
+            'financial.view', 'financial.create', 'financial.update',
         ],
         'secretary' => [
             'clients.view',
@@ -57,6 +60,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'tasks.view', 'tasks.create', 'tasks.update',
             'calendar.view', 'calendar.create', 'calendar.update',
             'documents.view', 'documents.create',
+            'financial.view',
         ],
     ];
 

@@ -85,7 +85,7 @@ defineProps({
                 id="description"
                 v-model="form.description"
                 rows="4"
-                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm"
                 placeholder="Detalhes da tarefa..."
             ></textarea>
             <InputError class="mt-2" :message="form.errors.description" />

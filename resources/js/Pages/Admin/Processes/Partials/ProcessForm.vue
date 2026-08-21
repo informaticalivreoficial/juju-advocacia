@@ -23,7 +23,7 @@ defineProps({
                 <TextInput
                     id="title"
                     type="text"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     v-model="form.title"
                     required
                     autofocus
@@ -36,7 +36,7 @@ defineProps({
                 <TextInput
                     id="process_number"
                     type="text"
-                    class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                    class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                     v-model="form.process_number"
                     placeholder="0000000-00.0000.0.00.0000"
                 />
@@ -98,7 +98,7 @@ defineProps({
                     <TextInput
                         id="action_type"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.action_type"
                     />
                     <InputError class="mt-2" :message="form.errors.action_type" />
@@ -109,7 +109,7 @@ defineProps({
                     <TextInput
                         id="court"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.court"
                         placeholder="TJSP, TRT-15..."
                     />
@@ -121,7 +121,7 @@ defineProps({
                     <TextInput
                         id="district"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.district"
                     />
                     <InputError class="mt-2" :message="form.errors.district" />
@@ -132,7 +132,7 @@ defineProps({
                     <TextInput
                         id="court_division"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.court_division"
                     />
                     <InputError class="mt-2" :message="form.errors.court_division" />
@@ -143,7 +143,7 @@ defineProps({
                     <TextInput
                         id="plaintiff"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.plaintiff"
                     />
                     <InputError class="mt-2" :message="form.errors.plaintiff" />
@@ -154,7 +154,7 @@ defineProps({
                     <TextInput
                         id="defendant"
                         type="text"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.defendant"
                     />
                     <InputError class="mt-2" :message="form.errors.defendant" />
@@ -167,7 +167,7 @@ defineProps({
                         type="number"
                         step="0.01"
                         min="0"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.case_value"
                     />
                     <InputError class="mt-2" :message="form.errors.case_value" />
@@ -178,7 +178,7 @@ defineProps({
                     <TextInput
                         id="distribution_date"
                         type="date"
-                        class="mt-1 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                        class="mt-1 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         v-model="form.distribution_date"
                     />
                     <InputError class="mt-2" :message="form.errors.distribution_date" />
@@ -192,7 +192,7 @@ defineProps({
                 id="description"
                 v-model="form.description"
                 rows="4"
-                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-brand-500 focus:ring-brand-500 sm:text-sm"
             ></textarea>
             <InputError class="mt-2" :message="form.errors.description" />
         </div>
@@ -201,7 +201,7 @@ defineProps({
             <input
                 v-model="form.confidentiality"
                 type="checkbox"
-                class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+                class="rounded border-slate-300 text-brand-600 focus:ring-brand-500"
             />
             <span class="text-sm font-medium text-slate-700">Processo confidencial</span>
         </label>

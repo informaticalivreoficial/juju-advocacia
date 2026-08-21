@@ -21,7 +21,7 @@ const can = (permission) => (auth.value.permissions ?? []).includes(permission);
 
 const categoryLabels = Object.fromEntries(props.categories.map((item) => [item.value, item.label]));
 const categoryColor = (category) => ({
-    contract: 'indigo',
+    contract: 'brand',
     petition: 'amber',
     decision: 'green',
     certificate: 'orange',
@@ -93,7 +93,7 @@ const deleteDocument = () => {
                 <Link
                     v-if="can('documents.create')"
                     :href="route('admin.documents.create')"
-                    class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+                    class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-500"
                 >
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -109,7 +109,7 @@ const deleteDocument = () => {
                             v-model="search"
                             type="search"
                             placeholder="Buscar por documento, processo ou cliente..."
-                            class="mt-0 block w-full border-slate-300 focus:border-indigo-500 focus:ring-indigo-500"
+                            class="mt-0 block w-full border-slate-300 focus:border-brand-500 focus:ring-brand-500"
                         />
                     </div>
                     <div>
@@ -146,7 +146,7 @@ const deleteDocument = () => {
                                 </td>
                                 <td class="hidden px-4 py-3 text-sm text-slate-600 xl:table-cell">
                                     <template v-if="document.process">
-                                        <Link :href="route('admin.processes.show', document.process.id)" class="hover:text-indigo-600 hover:underline">
+                                        <Link :href="route('admin.processes.show', document.process.id)" class="hover:text-brand-600 hover:underline">
                                             {{ document.process.title }}
                                         </Link>
                                     </template>
@@ -161,7 +161,7 @@ const deleteDocument = () => {
                                     <div class="flex items-center justify-end gap-1">
                                         <Link
                                             :href="route('admin.documents.download', document.id)"
-                                            class="rounded-md p-2 text-slate-500 transition hover:bg-indigo-50 hover:text-indigo-600"
+                                            class="rounded-md p-2 text-slate-500 transition hover:bg-brand-50 hover:text-brand-600"
                                             title="Baixar"
                                         >
                                             <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">

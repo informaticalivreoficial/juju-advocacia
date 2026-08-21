@@ -22,7 +22,7 @@ const can = (permission) => (auth.value.permissions ?? []).includes(permission);
 
 const typeLabels = Object.fromEntries(props.types.map((item) => [item.value, item.label]));
 const typeColor = (type) => ({
-    hearing: 'indigo',
+    hearing: 'brand',
     appointment: 'green',
     meeting: 'amber',
     other: 'slate',
@@ -114,7 +114,7 @@ const formatDateTime = (value) => {
                 <Link
                     v-if="can('calendar.create')"
                     :href="route('admin.calendar.create')"
-                    class="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-500"
+                    class="inline-flex items-center justify-center rounded-md bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-500"
                 >
                     <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -167,7 +167,7 @@ const formatDateTime = (value) => {
                         :key="index"
                         :class="[
                             'rounded-lg border border-slate-200 bg-white p-2 md:min-h-24 md:rounded-none md:border-0',
-                            cell?.iso === today ? 'bg-indigo-50/60' : '',
+                            cell?.iso === today ? 'bg-brand-50/60' : '',
                         ]"
                     >
                         <template v-if="cell">
@@ -175,7 +175,7 @@ const formatDateTime = (value) => {
                                 <span
                                     :class="[
                                         'flex h-6 w-6 items-center justify-center rounded-full text-sm font-medium',
-                                        cell.iso === today ? 'bg-indigo-600 text-white' : 'text-slate-700',
+                                        cell.iso === today ? 'bg-brand-600 text-white' : 'text-slate-700',
                                     ]"
                                 >
                                     {{ cell.date }}
@@ -183,7 +183,7 @@ const formatDateTime = (value) => {
                                 <Link
                                     v-if="can('calendar.create')"
                                     :href="route('admin.calendar.create', { date: cell.iso })"
-                                    class="rounded p-0.5 text-slate-300 transition hover:text-indigo-500"
+                                    class="rounded p-0.5 text-slate-300 transition hover:text-brand-500"
                                     title="Adicionar evento neste dia"
                                 >
                                     <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -200,7 +200,7 @@ const formatDateTime = (value) => {
                                     :href="route('admin.calendar.edit', event.id)"
                                     class="block truncate rounded px-1.5 py-0.5 text-xs font-medium"
                                     :class="{
-                                        'bg-indigo-100 text-indigo-700': event.type === 'hearing',
+                                        'bg-brand-100 text-brand-700': event.type === 'hearing',
                                         'bg-green-100 text-green-700': event.type === 'appointment',
                                         'bg-amber-100 text-amber-700': event.type === 'meeting',
                                         'bg-slate-100 text-slate-600': event.type === 'other',
@@ -233,7 +233,7 @@ const formatDateTime = (value) => {
                                     <p class="mt-0.5 text-xs text-slate-500">
                                         {{ formatDateTime(event.start_datetime) }}
                                         <template v-if="event.process">
-                                            · <Link :href="route('admin.processes.show', event.process.id)" class="hover:text-indigo-600 hover:underline">{{ event.process.title }}</Link>
+                                            · <Link :href="route('admin.processes.show', event.process.id)" class="hover:text-brand-600 hover:underline">{{ event.process.title }}</Link>
                                         </template>
                                         <template v-if="event.client">
                                             · {{ event.client.name || event.client.company_name }}
