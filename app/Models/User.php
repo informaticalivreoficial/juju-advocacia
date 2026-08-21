@@ -31,6 +31,7 @@ class User extends Authenticatable
         'phone',
         'is_active',
         'last_login_at',
+        
     ];
 
     /**
