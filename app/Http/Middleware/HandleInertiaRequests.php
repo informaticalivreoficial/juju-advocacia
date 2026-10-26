@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Support\StorageUrl;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
@@ -38,6 +39,11 @@ class HandleInertiaRequests extends Middleware
             ],
             'flash' => [
                 'success' => fn () => $request->session()->get('success'),
+            ],
+            // URLs públicas dos arquivos de identidade visual hospedados no disco padrão.
+            'branding' => fn () => [
+                'photo' => StorageUrl::public('users/julia.jpeg'),
+                'favicon' => StorageUrl::public('config/favicon.png'),
             ],
         ];
     }

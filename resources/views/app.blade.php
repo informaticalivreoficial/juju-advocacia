@@ -14,27 +14,32 @@
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="{{ url('/') }}">
 
+        @php
+            $brandPhotoUrl = \App\Support\StorageUrl::public('users/julia.jpeg');
+            $brandFaviconUrl = \App\Support\StorageUrl::public('config/favicon.png');
+        @endphp
+
         <!-- Open Graph -->
         <meta property="og:site_name" content="{{ config('app.name') }}">
         <meta property="og:type" content="profile">
         <meta property="og:title" content="Júlia Montanari — Estudante de Direito">
         <meta property="og:description" content="Bacharelanda em Direito com experiência em estágios jurídicos e vivência prática no ambiente forense, buscando crescimento nas áreas cível e trabalhista.">
         <meta property="og:url" content="{{ url('/') }}">
-        <meta property="og:image" content="{{ asset('storage/users/julia.jpeg') }}">
+        <meta property="og:image" content="{{ $brandPhotoUrl }}">
         <meta property="og:locale" content="pt_BR">
 
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Júlia Montanari — Estudante de Direito">
         <meta name="twitter:description" content="Bacharelanda em Direito com experiência em estágios jurídicos e vivência prática no ambiente forense, buscando crescimento nas áreas cível e trabalhista.">
-        <meta name="twitter:image" content="{{ asset('storage/users/julia.jpeg') }}">
+        <meta name="twitter:image" content="{{ $brandPhotoUrl }}">
 
         <!-- Theme -->
         <meta name="theme-color" content="#881337">
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{ asset('storage/config/favicon.png') }}">
-        <link rel="apple-touch-icon" href="{{ asset('storage/config/favicon.png') }}">
+        <link rel="icon" type="image/png" href="{{ $brandFaviconUrl }}">
+        <link rel="apple-touch-icon" href="{{ $brandFaviconUrl }}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -55,7 +60,7 @@
                 "name": "Júlia Montanari",
                 "jobTitle": "Estudante de Direito",
                 "url": "{{ url('/') }}",
-                "image": "{{ asset('storage/users/julia.jpeg') }}",
+                "image": "{{ $brandPhotoUrl }}",
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "São José dos Campos",

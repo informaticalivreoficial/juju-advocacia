@@ -75,7 +75,7 @@ class FinancialTransactionsTest extends TestCase
 
     public function test_ad_hoc_transaction_can_be_created_with_attachment(): void
     {
-        Storage::fake('public');
+        Storage::fake('local');
 
         $category = FinancialCategory::factory()->expense()->create(['user_id' => $this->user->id]);
 
@@ -100,7 +100,7 @@ class FinancialTransactionsTest extends TestCase
         ]);
 
         $transaction = FinancialTransaction::where('user_id', $this->user->id)->firstOrFail();
-        Storage::disk('public')->assertExists($transaction->attachment_path);
+        Storage::disk('local')->assertExists($transaction->attachment_path);
     }
 
     public function test_paid_status_sets_paid_at(): void

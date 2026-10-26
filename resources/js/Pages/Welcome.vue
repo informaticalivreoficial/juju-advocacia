@@ -6,6 +6,13 @@ import InputLabel from '@/Components/InputLabel.vue';
 import Modal from '@/Components/Modal.vue';
 import TextInput from '@/Components/TextInput.vue';
 
+const props = defineProps({
+    branding: {
+        type: Object,
+        required: true,
+    },
+});
+
 const showContactModal = ref(false);
 
 const contactForm = useForm({
@@ -65,7 +72,7 @@ const remainingLabel = computed(() => {
                 <div class="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-14">
                     <div class="shrink-0">
                         <img
-                            src="/storage/users/julia.jpeg"
+                            :src="props.branding.photo"
                             alt="Foto de Júlia Montanari"
                             class="h-44 w-44 rounded-3xl border-4 border-white/30 object-cover object-top shadow-2xl shadow-rose-950/30 sm:h-52 sm:w-52"
                         />

@@ -134,7 +134,7 @@ class FinancialTransactionController extends Controller
         $attachment = null;
 
         if ($request->hasFile('attachment')) {
-            $attachment = $request->file('attachment')->store('financial/attachments', 'public');
+            $attachment = $request->file('attachment')->store('financial/attachments');
         }
 
         $transaction = FinancialTransaction::create([
@@ -178,10 +178,10 @@ class FinancialTransactionController extends Controller
 
         if ($request->hasFile('attachment')) {
             if ($attachment !== null) {
-                Storage::disk('public')->delete($attachment);
+                Storage::delete($attachment);
             }
 
-            $attachment = $request->file('attachment')->store('financial/attachments', 'public');
+            $attachment = $request->file('attachment')->store('financial/attachments');
         }
 
         $transaction->update([
@@ -213,7 +213,7 @@ class FinancialTransactionController extends Controller
         }
 
         if ($transaction->attachment_path !== null) {
-            Storage::disk('public')->delete($transaction->attachment_path);
+            Storage::delete($transaction->attachment_path);
         }
 
         $transaction->delete();
@@ -247,11 +247,11 @@ class FinancialTransactionController extends Controller
     {
         $this->authorize('view', $transaction);
 
-        abort_unless($transaction->attachment_path !== null && Storage::disk('public')->exists($transaction->attachment_path), 404);
+        abort_unless($transaction->attachment_path !== null && Storage::exists($transaction->attachment_path), 404);
 
         $name = $transaction->descriptionText().'.'.pathinfo($transaction->attachment_path, PATHINFO_EXTENSION);
 
-        return Storage::disk('public')->download($transaction->attachment_path, $name);
+        return Storage::download($transaction->attachment_path, $name);
     }
 
     public function markAllExpensesPaid(Request $request): RedirectResponse
