@@ -18,5 +18,7 @@ yarn-error.log
 /.idea
 /.vscode
 /arquivos_locais
+opencode.json
 /.opencode
 AGENTS.md
+/postman
